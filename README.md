@@ -23,6 +23,7 @@ STEP 7: Use cross tabulation method to quantitatively analyze the relationship b
 STEP 8: Use heatmap method of representation to show relationships between two variables, one plotted on each axis.
 
 ## CODING AND OUTPUT
+coding:
         from google.colab import drive
 drive.mount('/content/drive')
 
@@ -134,6 +135,29 @@ accuracy
 
 predictions
 
+Output:
+![image](https://github.com/user-attachments/assets/890a183e-62d1-4842-85e1-2b77427e2494)
+![image](https://github.com/user-attachments/assets/45e68a67-3d8b-4bde-8c15-1dfaf91e08cf)
+![image](https://github.com/user-attachments/assets/5840ffda-4589-4df6-a2eb-c9277e091d0b)
+![image](https://github.com/user-attachments/assets/0b0063bc-7099-4b57-b617-5507f34c9d73)
+![image](https://github.com/user-attachments/assets/90e3da02-e45e-4e3a-9a59-82f62036a391)
+![image](https://github.com/user-attachments/assets/627e4dd1-4df7-49ea-bc00-16aefc86c958)
+![image](https://github.com/user-attachments/assets/811bb791-0794-49ac-a444-fe47cb603073)
+![image](https://github.com/user-attachments/assets/19a4266b-3fa1-412e-b2a8-4bfc63f2a69b)
+![image](https://github.com/user-attachments/assets/bc651add-1af1-45da-af34-a4d62f867483)
+![image](https://github.com/user-attachments/assets/8278c6ae-95e2-4d5a-ab64-2c6eeaf3f4d3)
+![image](https://github.com/user-attachments/assets/40c44174-248e-40d2-accf-6d1b6619521e)
+![image](https://github.com/user-attachments/assets/bd275956-b860-4388-844f-d8b194e3bd42)
+![image](https://github.com/user-attachments/assets/551a9019-9580-409c-ba0c-b57a506491e1)
+![image](https://github.com/user-attachments/assets/84c6d050-5f54-4bc4-9798-5ea2af315e1c)
+![image](https://github.com/user-attachments/assets/dd676729-6c2c-461e-9d43-d1374a0fcf0b)
+![image](https://github.com/user-attachments/assets/4ac51547-2df8-4a51-817a-595a67634fdc)
+![image](https://github.com/user-attachments/assets/e57e1d52-fd1f-43f1-95c0-04b667dcc59a)
+![image](https://github.com/user-attachments/assets/2bf66767-db5b-4581-b10a-7806c1c67d0d)
+![image](https://github.com/user-attachments/assets/0f28c292-dc1d-4790-a3e3-84e52f720a96)
+![image](https://github.com/user-attachments/assets/eb44617e-1798-43e4-88f6-41ed53e60baf)
+![image](https://github.com/user-attachments/assets/7dab067a-90d5-4b88-8e8c-f11b7953f150)
+
 
 # RESULT
-        <<INCLUDE YOUR RESULT HERE>>
+        Data analysis was completed successfully
