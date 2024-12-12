@@ -23,8 +23,7 @@ STEP 7: Use cross tabulation method to quantitatively analyze the relationship b
 STEP 8: Use heatmap method of representation to show relationships between two variables, one plotted on each axis.
 
 ## CODING AND OUTPUT
-coding:
-        from google.colab import drive
+from google.colab import drive
 drive.mount('/content/drive')
 
 ls drive/MyDrive/'Colab Notebooks'/DATA/
@@ -43,31 +42,52 @@ titan=pd.read_csv('drive/MyDrive/Data Science/titanic_dataset.csv')
 
 titan.head()
 
+![image](https://github.com/user-attachments/assets/1770b92f-689a-4220-8cbf-0bfd163c551b)
+
 titan.isnull()
 
+![image](https://github.com/user-attachments/assets/57ca1eb8-dccb-4a96-93f2-7563dcebd2b1)
+
 sns.heatmap(titan.isnull(),yticklabels=False,cbar=False,cmap = 'viridis')
+
+![image](https://github.com/user-attachments/assets/2079a56e-4257-4c03-8823-113bc00904cc)
 
 sns.set_style('whitegrid')
 sns.countplot(x='Survived',data=titan,palette='RdBu_r')
 
+![image](https://github.com/user-attachments/assets/f55fe3f4-5d55-4d14-8b8a-5d2412ccac6b)
+
 sns.set_style('whitegrid')
 sns.countplot(x='Survived',hue='Sex',data=titan,palette='RdBu_r')
+
+![image](https://github.com/user-attachments/assets/e219d497-3c3f-4d23-a710-9bf110fd8fe2)
 
 sns.set_style('whitegrid')
 sns.countplot(x='Survived',hue='Pclass',data=titan,palette='rainbow')
 
+![image](https://github.com/user-attachments/assets/26ec2c9a-5594-4833-b92c-dd7730593c3d)
+
 sns.displot(titan['Age'].dropna(),kde=False,color='darkred',bins=40)
+ 
+![image](https://github.com/user-attachments/assets/a6ade468-b970-4c81-8f0e-5474c32a3732)
+
 
 titan['Age'].hist(bins=30,alpha=0.3)
 
+![image](https://github.com/user-attachments/assets/cf71bdaa-6043-4408-81ed-ffdd145017b7)
+
 sns.countplot(x='SibSp',data=titan)
+ 
+ ![image](https://github.com/user-attachments/assets/fdd0d843-f68a-4246-aa02-6ce2066b8d33)
 
 titan['Fare'].hist()
 
-titan['Fare'].iplot()
+![image](https://github.com/user-attachments/assets/54b36fa6-4f2c-4d5a-9a8a-bd891175c99e)
 
 plt.figure(figsize=(12,7))
 sns.boxplot(x='Pclass',y='Age',data=titan,palette='winter')
+
+![image](https://github.com/user-attachments/assets/f895ba19-d181-4de8-a5d0-b43f3f02a9ee)
 
 def impute_age(cols):
   Age=cols[0]
@@ -86,15 +106,23 @@ titan['Age'] = titan[['Age','Pclass']].apply(impute_age,axis=1)
 
 sns.heatmap(titan.isnull(),yticklabels=False,cbar=False,cmap='viridis')
 
+![image](https://github.com/user-attachments/assets/7223e7cb-9845-467c-8dc8-b116fe82cd0a)
+
 titan.drop('Cabin',axis=1,inplace=True)
 
 titan.head()
+
+![image](https://github.com/user-attachments/assets/ce6683e7-d058-4e1d-9fe2-caadabc33cb1)
 
 titan.dropna(inplace=True)
 
 titan.info()
 
+![image](https://github.com/user-attachments/assets/09caef8e-f3c3-4799-a1aa-10b60948ff1a)
+
 pd.get_dummies(titan['Embarked'],drop_first=True).head()
+
+![image](https://github.com/user-attachments/assets/ce2eae25-3ede-4a80-bcf7-84646cbcdcb5)
 
 sex=pd.get_dummies(titan['Sex'],drop_first=True)
 embark=pd.get_dummies(titan['Embarked'],drop_first=True)
@@ -103,13 +131,21 @@ titan.drop(['Sex','Embarked','Name','Ticket'],axis=1,inplace=True)
 
 titan.head()
 
+![image](https://github.com/user-attachments/assets/36c9344a-e30b-4606-a214-ac37250e47a1)
+
 titan=pd.concat([titan,sex,embark],axis=1)
 
 titan.head()
 
+![image](https://github.com/user-attachments/assets/b1a51333-de58-445d-a159-da8136654045)
+
 titan.drop('Survived',axis=1).head()
 
+![image](https://github.com/user-attachments/assets/817860b9-1c6a-418b-955e-1d2e06b48bb7)
+
 titan['Survived'].head()
+
+![image](https://github.com/user-attachments/assets/ee6f7754-6b6f-4475-aff1-c6d4c3f313a4)
 
 from sklearn.model_selection import train_test_split
 
@@ -128,6 +164,8 @@ accuracy=confusion_matrix(Y_test,predictions)
 
 accuracy
 
+![image](https://github.com/user-attachments/assets/2d746514-12f6-489c-baf0-85450aa5f6b4)
+
 from sklearn.metrics import accuracy_score
 
 accuracy=accuracy_score(Y_test,predictions)
@@ -135,29 +173,7 @@ accuracy
 
 predictions
 
-Output:
-![image](https://github.com/user-attachments/assets/890a183e-62d1-4842-85e1-2b77427e2494)
-![image](https://github.com/user-attachments/assets/45e68a67-3d8b-4bde-8c15-1dfaf91e08cf)
-![image](https://github.com/user-attachments/assets/5840ffda-4589-4df6-a2eb-c9277e091d0b)
-![image](https://github.com/user-attachments/assets/0b0063bc-7099-4b57-b617-5507f34c9d73)
-![image](https://github.com/user-attachments/assets/90e3da02-e45e-4e3a-9a59-82f62036a391)
-![image](https://github.com/user-attachments/assets/627e4dd1-4df7-49ea-bc00-16aefc86c958)
-![image](https://github.com/user-attachments/assets/811bb791-0794-49ac-a444-fe47cb603073)
-![image](https://github.com/user-attachments/assets/19a4266b-3fa1-412e-b2a8-4bfc63f2a69b)
-![image](https://github.com/user-attachments/assets/bc651add-1af1-45da-af34-a4d62f867483)
-![image](https://github.com/user-attachments/assets/8278c6ae-95e2-4d5a-ab64-2c6eeaf3f4d3)
-![image](https://github.com/user-attachments/assets/40c44174-248e-40d2-accf-6d1b6619521e)
-![image](https://github.com/user-attachments/assets/bd275956-b860-4388-844f-d8b194e3bd42)
-![image](https://github.com/user-attachments/assets/551a9019-9580-409c-ba0c-b57a506491e1)
-![image](https://github.com/user-attachments/assets/84c6d050-5f54-4bc4-9798-5ea2af315e1c)
-![image](https://github.com/user-attachments/assets/dd676729-6c2c-461e-9d43-d1374a0fcf0b)
-![image](https://github.com/user-attachments/assets/4ac51547-2df8-4a51-817a-595a67634fdc)
-![image](https://github.com/user-attachments/assets/e57e1d52-fd1f-43f1-95c0-04b667dcc59a)
-![image](https://github.com/user-attachments/assets/2bf66767-db5b-4581-b10a-7806c1c67d0d)
-![image](https://github.com/user-attachments/assets/0f28c292-dc1d-4790-a3e3-84e52f720a96)
-![image](https://github.com/user-attachments/assets/eb44617e-1798-43e4-88f6-41ed53e60baf)
-![image](https://github.com/user-attachments/assets/7dab067a-90d5-4b88-8e8c-f11b7953f150)
-
+![image](https://github.com/user-attachments/assets/22329052-d469-49ce-9cd2-6a43766b0d96)
 
 # RESULT
         Data analysis was completed successfully
